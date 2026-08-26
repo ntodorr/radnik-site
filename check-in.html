@@ -1,1 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Weekly Service Check-In | RADNIK</title>
+
+  <meta name="robots" content="noindex, nofollow">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f4f4;
+      color: #181818;
+      line-height: 1.5;
+    }
+
+    .top-bar {
+      background: #111;
+      padding: 22px 20px;
+      text-align: center;
+      border-bottom: 4px solid #c90000;
+    }
+
+    .logo {
+      font-size: 30px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: #fff;
+    }
+
+    .logo span {
+      color: #d00000;
+    }
+
+    .page-wrap {
+      max-width: 720px;
+      margin: 45px auto;
+      padding: 0 18px 60px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 38px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      color: #c90000;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.4px;
+      margin-bottom: 8px;
+    }
+
+    h1 {
+      font-size: 32px;
+      line-height: 1.15;
+      margin-bottom: 8px;
+    }
+
+    .property {
+      font-size: 17px;
+      color: #666;
+      margin-bottom: 22px;
+    }
+
+    .intro {
+      font-size: 15px;
+      color: #555;
+      margin-bottom: 32px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid #e5e5e5;
+    }
+
+    .question {
+      margin-bottom: 32px;
+    }
+
+    .question-title {
+      font-size: 17px;
+      font-weight: 700;
+      margin-bottom: 7px;
+    }
+
+    .optional {
+      font-size: 13px;
+      font-weight: 400;
+      color: #888;
+    }
+
+    .helper {
+      color: #777;
+      font-size: 13px;
+      margin-bottom: 12px;
+    }
+
+    /* STAR RATING */
+
+    .stars {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+      gap: 7px;
+      margin-top: 12px;
+    }
+
+    .stars input {
+      display: none;
+    }
+
+    .stars label {
+      font-size: 44px;
+      color: #d2d2d2;
+      cursor: pointer;
+      transition: 0.15s ease;
+      line-height: 1;
+    }
+
+    .stars label:hover,
+    .stars label:hover ~ label,
+    .stars input:checked ~ label {
+      color: #c90000;
+    }
+
+    .rating-labels {
+      display: flex;
+      justify-content: space-between;
+      max-width: 330px;
+      font-size: 11px;
+      color: #888;
+      margin-top: 8px;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 105px;
+      resize: vertical;
+      border: 1px solid #d4d4d4;
+      border-radius: 6px;
+      padding: 13px;
+      font-family: inherit;
+      font-size: 15px;
+      outline: none;
+      transition: border 0.15s ease;
+    }
+
+    textarea:focus {
+      border-color: #c90000;
+    }
+
+    .options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .option {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #f8f8f8;
+      border: 1px solid #e1e1e1;
+      border-radius: 6px;
+      padding: 12px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .option:hover {
+      border-color: #bbb;
+    }
+
+    .option input {
+      accent-color: #c90000;
+      width: 17px;
+      height: 17px;
+    }
+
+    .follow-up-options {
+      display: flex;
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .follow-choice {
+      flex: 1;
+      border: 1px solid #d8d8d8;
+      padding: 13px;
+      border-radius: 6px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+    }
+
+    .follow-choice input {
+      accent-color: #c90000;
+    }
+
+    #followUpDetails {
+      display: none;
+      margin-top: 15px;
+    }
+
+    .opt-out {
+      border-top: 1px solid #e5e5e5;
+      margin-top: 12px;
+      padding-top: 24px;
+      font-size: 13px;
+      color: #666;
+    }
+
+    .opt-out label {
+      display: flex;
+      gap: 9px;
+      align-items: flex-start;
+      cursor: pointer;
+    }
+
+    .opt-out input {
+      margin-top: 3px;
+      accent-color: #c90000;
+    }
+
+    button {
+      width: 100%;
+      background: #c90000;
+      border: 0;
+      color: white;
+      padding: 16px;
+      font-size: 16px;
+      font-weight: 700;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 28px;
+      transition: 0.15s ease;
+    }
+
+    button:hover {
+      background: #a90000;
+    }
+
+    button:disabled {
+      opacity: 0.65;
+      cursor: not-allowed;
+    }
+
+    .required-note {
+      color: #c90000;
+      font-size: 12px;
+      margin-top: 7px;
+      display: none;
+    }
+
+    .privacy {
+      text-align: center;
+      color: #888;
+      font-size: 11px;
+      margin-top: 18px;
+    }
+
+    .success {
+      display: none;
+      text-align: center;
+      padding: 35px 10px;
+    }
+
+    .success-icon {
+      width: 62px;
+      height: 62px;
+      background: #c90000;
+      color: white;
+      border-radius: 50%;
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 29px;
+      font-weight: bold;
+    }
+
+    .success h2 {
+      font-size: 27px;
+      margin-bottom: 12px;
+    }
+
+    .success p {
+      color: #666;
+      max-width: 450px;
+      margin: auto;
+    }
+
+    @media (max-width: 600px) {
+      .page-wrap {
+        margin-top: 25px;
+      }
+
+      .card {
+        padding: 28px 20px;
+      }
+
+      h1 {
+        font-size: 27px;
+      }
+
+      .options {
+        grid-template-columns: 1fr;
+      }
+
+      .follow-up-options {
+        flex-direction: column;
+      }
+
+      .stars label {
+        font-size: 40px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="top-bar">
+    <div class="logo"><span>R</span>ADNIK</div>
+  </div>
+
+  <main class="page-wrap">
+
+    <div class="card">
+
+      <div id="formContent">
+
+        <div class="eyebrow">Weekly Service Check-In</div>
+
+        <h1>How did we do this week?</h1>
+
+        <div class="property" id="propertyName">
+          FirstService Spring Hill
+        </div>
+
+        <p class="intro">
+          This optional check-in takes less than a minute.
+          Your feedback goes directly to RADNIK management and helps us
+          make sure our team is delivering the level of service you expect.
+        </p>
+
+        <form id="feedbackForm">
+
+          <!-- RATING -->
+          <div class="question">
+
+            <div class="question-title">
+              How would you rate RADNIK's service this week?
+            </div>
+
+            <div class="stars">
+              <input type="radio" id="star5" name="rating" value="5">
+              <label for="star5">★</label>
+
+              <input type="radio" id="star4" name="rating" value="4">
+              <label for="star4">★</label>
+
+              <input type="radio" id="star3" name="rating" value="3">
+              <label for="star3">★</label>
+
+              <input type="radio" id="star2" name="rating" value="2">
+              <label for="star2">★</label>
+
+              <input type="radio" id="star1" name="rating" value="1">
+              <label for="star1">★</label>
+            </div>
+
+            <div class="rating-labels">
+              <span>Needs Improvement</span>
+              <span>Excellent</span>
+            </div>
+
+            <div class="required-note" id="ratingError">
+              Please select a rating before submitting.
+            </div>
+
+          </div>
+
+
+          <!-- DID WELL -->
+          <div class="question">
+
+            <div class="question-title">
+              What did we do well?
+              <span class="optional">Optional</span>
+            </div>
+
+            <textarea
+              name="didWell"
+              placeholder="Anything you appreciated about our team, communication, response time, workmanship, etc."></textarea>
+
+          </div>
+
+
+          <!-- IMPROVEMENT -->
+          <div class="question">
+
+            <div class="question-title">
+              Is there anything we could do better?
+              <span class="optional">Optional</span>
+            </div>
+
+            <textarea
+              name="improvement"
+              placeholder="Let us know about anything we should address or improve."></textarea>
+
+          </div>
+
+
+          <!-- ADDITIONAL WORK -->
+          <div class="question">
+
+            <div class="question-title">
+              Is there anything else around the property we can help with?
+              <span class="optional">Optional</span>
+            </div>
+
+            <div class="helper">
+              Select any that apply.
+            </div>
+
+            <div class="options">
+
+              <label class="option">
+                <input type="checkbox" name="services" value="Maintenance / Repairs">
+                Maintenance / Repairs
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="services" value="Painting / Drywall / Finishes">
+                Painting / Drywall / Finishes
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="services" value="Doors / Hardware">
+                Doors / Hardware
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="services" value="Exterior / Pressure Washing">
+                Exterior / Pressure Washing
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="services" value="Turnover / Cleaning">
+                Turnover / Cleaning
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="services" value="Small Improvement Project">
+                Small Improvement Project
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="services" value="CapEx / Larger Project">
+                CapEx / Larger Project
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="services" value="Other">
+                Other
+              </label>
+
+            </div>
+
+          </div>
+
+
+          <!-- FOLLOW UP -->
+          <div class="question">
+
+            <div class="question-title">
+              Would you like someone from RADNIK to follow up?
+              <span class="optional">Optional</span>
+            </div>
+
+            <div class="follow-up-options">
+
+              <label class="follow-choice">
+                <input
+                  type="radio"
+                  name="followUp"
+                  value="No"
+                  onclick="toggleFollowUp(false)">
+                No, we're all set
+              </label>
+
+              <label class="follow-choice">
+                <input
+                  type="radio"
+                  name="followUp"
+                  value="Yes"
+                  onclick="toggleFollowUp(true)">
+                Yes, please contact me
+              </label>
+
+            </div>
+
+            <div id="followUpDetails">
+              <textarea
+                name="followUpDetails"
+                placeholder="What would you like us to take a look at?"></textarea>
+            </div>
+
+          </div>
+
+
+          <!-- OPT OUT -->
+          <div class="opt-out">
+
+            <label>
+              <input type="checkbox" name="optOut" value="Yes">
+              <span>
+                I would prefer not to receive future weekly RADNIK Service Check-Ins.
+              </span>
+            </label>
+
+          </div>
+
+
+          <button type="submit" id="submitButton">
+            Submit Feedback
+          </button>
+
+          <div class="privacy">
+            Feedback is reviewed directly by RADNIK management.
+          </div>
+
+        </form>
+
+      </div>
+
+
+      <!-- SUCCESS SCREEN -->
+      <div class="success" id="successMessage">
+
+        <div class="success-icon">✓</div>
+
+        <h2>Thank you.</h2>
+
+        <p>
+          Your feedback has been submitted directly to RADNIK management.
+          We appreciate you taking the time to help us serve your property better.
+        </p>
+
+      </div>
+
+    </div>
+
+  </main>
+
+
+  <script>
+
+    /*
+      These can later be automatically populated
+      from each property's unique email link.
+    */
+
+    const urlParams = new URLSearchParams(window.location.search);
+
+    const property =
+      urlParams.get("property") || "FirstService Spring Hill";
+
+    const client =
+      urlParams.get("client") || "FirstService Residential";
+
+    document.getElementById("propertyName").textContent = property;
+
+
+    function toggleFollowUp(show) {
+
+      document.getElementById("followUpDetails").style.display =
+        show ? "block" : "none";
+
+    }
+
+
+    document
+      .getElementById("feedbackForm")
+      .addEventListener("submit", async function(event) {
+
+        event.preventDefault();
+
+        const rating =
+          document.querySelector('input[name="rating"]:checked');
+
+        if (!rating) {
+
+          document.getElementById("ratingError").style.display = "block";
+
+          return;
+
+        }
+
+        document.getElementById("ratingError").style.display = "none";
+
+        const form = event.target;
+
+        const selectedServices = Array.from(
+          document.querySelectorAll('input[name="services"]:checked')
+        ).map(item => item.value);
+
+        const followUp =
+          document.querySelector('input[name="followUp"]:checked');
+
+        const data = {
+
+          property: property,
+
+          client: client,
+
+          rating: Number(rating.value),
+
+          didWell: form.didWell.value.trim(),
+
+          improvement: form.improvement.value.trim(),
+
+          services: selectedServices,
+
+          followUp: followUp ? followUp.value : "No response",
+
+          followUpDetails: form.followUpDetails.value.trim(),
+
+          optOut: form.optOut.checked,
+
+          submittedAt: new Date().toISOString()
+
+        };
+
+
+        /*
+          NEXT STEP:
+          We will connect this to /api/submit-feedback
+          so every response is stored automatically.
+        */
+
+        console.log("RADNIK Feedback:", data);
+
+
+        document.getElementById("formContent").style.display = "none";
+
+        document.getElementById("successMessage").style.display = "block";
+
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+
+      });
+
+  </script>
+
+</body>
+</html>
