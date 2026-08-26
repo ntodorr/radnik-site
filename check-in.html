@@ -6,7 +6,6 @@
 
   <title>Weekly Service Check-In | RADNIK</title>
 
-  <!-- Keep this page out of Google -->
   <meta name="robots" content="noindex, nofollow">
 
   <style>
@@ -31,7 +30,8 @@
       width: 100%;
       background: #0d0d0d;
       border-bottom: 4px solid #c9252d;
-      padding: 18px 20px;
+      padding: 12px 20px;
+
       display: flex;
       align-items: center;
       justify-content: center;
@@ -46,7 +46,7 @@
 
     .logo-link img {
       display: block;
-      width: 190px;
+      width: 275px;
       max-width: 100%;
       height: auto;
     }
@@ -58,7 +58,7 @@
     .page-wrap {
       width: 100%;
       max-width: 720px;
-      margin: 42px auto;
+      margin: 40px auto;
       padding: 0 18px 60px;
     }
 
@@ -76,9 +76,9 @@
 
     .form-header {
       text-align: center;
-      margin-bottom: 30px;
+      margin-bottom: 32px;
       padding-bottom: 30px;
-      border-bottom: 1px solid #e5e5e5;
+      border-bottom: 1px solid #e6e6e6;
     }
 
     .eyebrow {
@@ -93,22 +93,15 @@
     h1 {
       font-size: 31px;
       line-height: 1.2;
-      margin-bottom: 8px;
       color: #151515;
-    }
-
-    .property {
-      font-size: 17px;
-      font-weight: 600;
-      color: #555;
-      margin-bottom: 18px;
+      margin-bottom: 16px;
     }
 
     .intro {
-      max-width: 560px;
+      max-width: 550px;
       margin: 0 auto;
       font-size: 15px;
-      color: #666;
+      color: #666666;
       line-height: 1.65;
     }
 
@@ -135,7 +128,7 @@
     }
 
     .helper {
-      color: #7a7a7a;
+      color: #777777;
       font-size: 13px;
       margin-bottom: 12px;
     }
@@ -146,11 +139,11 @@
 
     .rating-question {
       text-align: center;
-      padding: 4px 0 8px;
+      padding: 3px 0 10px;
     }
 
     .rating-question .question-title {
-      margin-bottom: 16px;
+      margin-bottom: 17px;
     }
 
     .stars {
@@ -168,10 +161,11 @@
 
     .stars label {
       display: block;
-      font-size: 47px;
+      font-size: 48px;
       line-height: 1;
-      color: #d2d2d2;
+      color: #d3d3d3;
       cursor: pointer;
+
       transition:
         color 0.15s ease,
         transform 0.15s ease;
@@ -195,13 +189,14 @@
     }
 
     /* =========================
-       TEXT AREAS
+       TEXTAREAS
     ========================= */
 
     textarea {
       display: block;
       width: 100%;
       min-height: 105px;
+
       resize: vertical;
 
       background: #ffffff;
@@ -214,7 +209,7 @@
       font-size: 15px;
       line-height: 1.5;
 
-      color: #222;
+      color: #222222;
       outline: none;
 
       transition:
@@ -228,7 +223,7 @@
     }
 
     textarea::placeholder {
-      color: #9a9a9a;
+      color: #999999;
     }
 
     /* =========================
@@ -276,7 +271,7 @@
     }
 
     /* =========================
-       FOLLOW UP
+       FOLLOW-UP
     ========================= */
 
     .follow-up-options {
@@ -293,8 +288,8 @@
       align-items: center;
       gap: 9px;
 
-      border: 1px solid #d8d8d8;
       background: #f8f8f8;
+      border: 1px solid #d8d8d8;
       border-radius: 7px;
 
       padding: 12px 13px;
@@ -330,11 +325,11 @@
 
     .opt-out {
       border-top: 1px solid #e5e5e5;
-      margin-top: 6px;
+      margin-top: 5px;
       padding-top: 24px;
 
       font-size: 13px;
-      color: #666;
+      color: #666666;
     }
 
     .opt-out label {
@@ -353,18 +348,18 @@
     }
 
     /* =========================
-       BUTTON
+       SUBMIT BUTTON
     ========================= */
 
     button {
       display: block;
       width: 100%;
 
-      border: 0;
-      border-radius: 7px;
-
       background: #c9252d;
       color: #ffffff;
+
+      border: none;
+      border-radius: 7px;
 
       padding: 16px 18px;
       margin-top: 28px;
@@ -401,7 +396,7 @@
     }
 
     /* =========================
-       SUCCESS SCREEN
+       SUCCESS
     ========================= */
 
     .success {
@@ -438,7 +433,7 @@
     .success p {
       max-width: 470px;
       margin: 0 auto;
-      color: #666;
+      color: #666666;
       font-size: 15px;
       line-height: 1.6;
     }
@@ -450,15 +445,15 @@
     @media (max-width: 600px) {
 
       .top-bar {
-        padding: 16px;
+        padding: 11px 15px;
       }
 
       .logo-link img {
-        width: 160px;
+        width: 220px;
       }
 
       .page-wrap {
-        margin: 24px auto;
+        margin: 22px auto;
         padding: 0 12px 40px;
       }
 
@@ -467,12 +462,13 @@
         border-radius: 9px;
       }
 
-      h1 {
-        font-size: 26px;
+      .form-header {
+        margin-bottom: 28px;
+        padding-bottom: 25px;
       }
 
-      .property {
-        font-size: 16px;
+      h1 {
+        font-size: 26px;
       }
 
       .intro {
@@ -484,11 +480,11 @@
       }
 
       .stars {
-        gap: 6px;
+        gap: 4px;
       }
 
       .stars label {
-        font-size: 42px;
+        font-size: 40px;
       }
 
       .options {
@@ -499,6 +495,10 @@
         grid-template-columns: 1fr;
       }
 
+      textarea {
+        font-size: 16px;
+      }
+
     }
   </style>
 </head>
@@ -506,34 +506,40 @@
 <body>
 
   <!-- =========================
-       HEADER / LOGO
+       RADNIK HEADER
   ========================== -->
 
   <header class="top-bar">
 
-    <a href="/" class="logo-link" aria-label="RADNIK Home">
-
+    <a
+      href="/"
+      class="logo-link"
+      aria-label="RADNIK Home"
+    >
       <img
         src="IMG/RADNIK%20Logo.png"
-        alt="RADNIK">
-
+        alt="RADNIK"
+      >
     </a>
 
   </header>
 
 
   <!-- =========================
-       FORM
+       MAIN FORM
   ========================== -->
 
   <main class="page-wrap">
 
     <div class="card">
 
+
+      <!-- FORM CONTENT -->
+
       <div id="formContent">
 
 
-        <!-- INTRO -->
+        <!-- HEADER -->
 
         <div class="form-header">
 
@@ -544,12 +550,6 @@
           <h1>
             How did we do this week?
           </h1>
-
-          <div
-            class="property"
-            id="propertyName">
-            FirstService Spring Hill
-          </div>
 
           <p class="intro">
             This optional check-in takes less than a minute.
@@ -564,7 +564,7 @@
 
 
           <!-- =========================
-               RATING
+               OVERALL RATING
           ========================== -->
 
           <div class="question rating-question">
@@ -575,77 +575,55 @@
 
             <div
               class="stars"
-              aria-label="Service rating">
+              aria-label="Service rating"
+            >
 
               <input
                 type="radio"
                 id="star5"
                 name="rating"
-                value="5">
-
-              <label
-                for="star5"
-                title="5 stars">
-                ★
-              </label>
-
+                value="5"
+              >
+              <label for="star5" title="5 stars">★</label>
 
               <input
                 type="radio"
                 id="star4"
                 name="rating"
-                value="4">
-
-              <label
-                for="star4"
-                title="4 stars">
-                ★
-              </label>
-
+                value="4"
+              >
+              <label for="star4" title="4 stars">★</label>
 
               <input
                 type="radio"
                 id="star3"
                 name="rating"
-                value="3">
-
-              <label
-                for="star3"
-                title="3 stars">
-                ★
-              </label>
-
+                value="3"
+              >
+              <label for="star3" title="3 stars">★</label>
 
               <input
                 type="radio"
                 id="star2"
                 name="rating"
-                value="2">
-
-              <label
-                for="star2"
-                title="2 stars">
-                ★
-              </label>
-
+                value="2"
+              >
+              <label for="star2" title="2 stars">★</label>
 
               <input
                 type="radio"
                 id="star1"
                 name="rating"
-                value="1">
-
-              <label
-                for="star1"
-                title="1 star">
-                ★
-              </label>
+                value="1"
+              >
+              <label for="star1" title="1 star">★</label>
 
             </div>
 
             <div
               class="required-note"
-              id="ratingError">
+              id="ratingError"
+            >
               Please select a rating before submitting.
             </div>
 
@@ -659,18 +637,14 @@
           <div class="question">
 
             <div class="question-title">
-
               What did we do well this week?
-
-              <span class="optional">
-                Optional
-              </span>
-
+              <span class="optional">Optional</span>
             </div>
 
             <textarea
               name="didWell"
-              placeholder="Anything you appreciated about our team, communication, response time, workmanship, etc."></textarea>
+              placeholder="Anything you appreciated about our team, communication, responsiveness, workmanship, or service."
+            ></textarea>
 
           </div>
 
@@ -682,155 +656,113 @@
           <div class="question">
 
             <div class="question-title">
-
               Is there anything we could do better?
-
-              <span class="optional">
-                Optional
-              </span>
-
+              <span class="optional">Optional</span>
             </div>
 
             <textarea
               name="improvement"
-              placeholder="Let us know about anything we should address or improve."></textarea>
+              placeholder="Let us know about anything we should address or improve."
+            ></textarea>
 
           </div>
 
 
           <!-- =========================
-               OTHER WORK
+               ADDITIONAL OPPORTUNITIES
           ========================== -->
 
           <div class="question">
 
             <div class="question-title">
-
-              Is there anything else around the property we can help with?
-
-              <span class="optional">
-                Optional
-              </span>
-
+              Is there anything else we can help with?
+              <span class="optional">Optional</span>
             </div>
 
             <div class="helper">
               Select any that apply.
             </div>
 
-
             <div class="options">
 
 
               <label class="option">
-
                 <input
                   type="checkbox"
                   name="services"
-                  value="Maintenance / Repairs">
-
-                <span>
-                  Maintenance / Repairs
-                </span>
-
+                  value="Maintenance / Repairs"
+                >
+                <span>Maintenance / Repairs</span>
               </label>
 
 
               <label class="option">
-
                 <input
                   type="checkbox"
                   name="services"
-                  value="Painting / Drywall / Finishes">
-
-                <span>
-                  Painting / Drywall / Finishes
-                </span>
-
+                  value="Painting / Drywall / Finishes"
+                >
+                <span>Painting / Drywall / Finishes</span>
               </label>
 
 
               <label class="option">
-
                 <input
                   type="checkbox"
                   name="services"
-                  value="Doors / Hardware">
-
-                <span>
-                  Doors / Hardware
-                </span>
-
+                  value="Doors / Hardware"
+                >
+                <span>Doors / Hardware</span>
               </label>
 
 
               <label class="option">
-
                 <input
                   type="checkbox"
                   name="services"
-                  value="Exterior / Pressure Washing">
-
-                <span>
-                  Exterior / Pressure Washing
-                </span>
-
+                  value="Exterior / Pressure Washing"
+                >
+                <span>Exterior / Pressure Washing</span>
               </label>
 
 
               <label class="option">
-
                 <input
                   type="checkbox"
                   name="services"
-                  value="Turnover / Cleaning">
-
-                <span>
-                  Turnover / Cleaning
-                </span>
-
+                  value="Turnover / Cleaning"
+                >
+                <span>Turnover / Cleaning</span>
               </label>
 
 
               <label class="option">
-
                 <input
                   type="checkbox"
                   name="services"
-                  value="Small Improvement Project">
-
-                <span>
-                  Small Improvement Project
-                </span>
-
+                  value="Small Improvement Project"
+                >
+                <span>Small Improvement Project</span>
               </label>
 
 
               <label class="option">
-
                 <input
                   type="checkbox"
                   name="services"
-                  value="CapEx / Larger Project">
-
-                <span>
-                  CapEx / Larger Project
-                </span>
-
+                  value="CapEx / Larger Project"
+                >
+                <span>CapEx / Larger Project</span>
               </label>
 
 
               <label class="option">
-
                 <input
                   type="checkbox"
                   name="services"
-                  value="Other">
-
-                <span>
-                  Other
-                </span>
-
+                  value="Other"
+                >
+                <span>Other</span>
               </label>
 
 
@@ -846,15 +778,9 @@
           <div class="question">
 
             <div class="question-title">
-
               Would you like someone from RADNIK to follow up?
-
-              <span class="optional">
-                Optional
-              </span>
-
+              <span class="optional">Optional</span>
             </div>
-
 
             <div class="follow-up-options">
 
@@ -865,7 +791,8 @@
                   type="radio"
                   name="followUp"
                   value="No"
-                  onclick="toggleFollowUp(false)">
+                  onclick="toggleFollowUp(false)"
+                >
 
                 <span>
                   No, we're all set
@@ -880,7 +807,8 @@
                   type="radio"
                   name="followUp"
                   value="Yes"
-                  onclick="toggleFollowUp(true)">
+                  onclick="toggleFollowUp(true)"
+                >
 
                 <span>
                   Yes, please contact me
@@ -896,7 +824,8 @@
 
               <textarea
                 name="followUpDetails"
-                placeholder="What would you like us to take a look at?"></textarea>
+                placeholder="What would you like us to take a look at?"
+              ></textarea>
 
             </div>
 
@@ -914,7 +843,8 @@
               <input
                 type="checkbox"
                 name="optOut"
-                value="Yes">
+                value="Yes"
+              >
 
               <span>
                 I would prefer not to receive future weekly RADNIK Service Check-Ins.
@@ -931,7 +861,8 @@
 
           <button
             type="submit"
-            id="submitButton">
+            id="submitButton"
+          >
             Submit Feedback
           </button>
 
@@ -952,7 +883,8 @@
 
       <div
         class="success"
-        id="successMessage">
+        id="successMessage"
+      >
 
         <div class="success-icon">
           ✓
@@ -963,11 +895,12 @@
         </h2>
 
         <p>
-          Your feedback has been submitted directly to RADNIK management.
-          We appreciate you taking the time to help us serve your property better.
+          Your feedback has been sent directly to RADNIK management.
+          We appreciate you taking the time to help us continuously improve our service.
         </p>
 
       </div>
+
 
     </div>
 
@@ -981,45 +914,33 @@
   <script>
 
     /*
-      PROPERTY INFORMATION
+      UNIQUE CUSTOMER TOKEN
 
-      Later, the property and client can automatically
-      come from the unique link sent to each customer.
+      The visible form remains identical for every customer.
 
-      Example:
+      Later, each contact will receive a unique link such as:
 
-      radnik.us/check-in.html?property=FirstService%20Spring%20Hill
+      radnik.us/check-in.html?t=abc123xyz
+
+      That token will identify the customer, property
+      and contact behind the scenes.
     */
 
     const urlParams =
       new URLSearchParams(window.location.search);
 
-
-    const property =
-      urlParams.get("property") ||
-      "FirstService Spring Hill";
-
-
-    const client =
-      urlParams.get("client") ||
-      "FirstService Residential";
-
-
-    document
-      .getElementById("propertyName")
-      .textContent = property;
-
+    const token =
+      urlParams.get("t") || "";
 
 
     /*
-      FOLLOW-UP FIELD
+      SHOW / HIDE FOLLOW-UP DETAILS
     */
 
     function toggleFollowUp(show) {
 
       const details =
         document.getElementById("followUpDetails");
-
 
       details.style.display =
         show ? "block" : "none";
@@ -1037,7 +958,6 @@
     }
 
 
-
     /*
       FORM SUBMISSION
     */
@@ -1052,7 +972,7 @@
 
 
           /*
-            Require a star rating
+            STAR RATING REQUIRED
           */
 
           const rating =
@@ -1082,7 +1002,7 @@
 
 
           /*
-            Gather selected service opportunities
+            SERVICES SELECTED
           */
 
           const selectedServices =
@@ -1096,7 +1016,7 @@
 
 
           /*
-            Follow-up choice
+            FOLLOW-UP SELECTION
           */
 
           const followUp =
@@ -1106,14 +1026,16 @@
 
 
           /*
-            Build submission
+            BUILD RESPONSE OBJECT
           */
 
           const data = {
 
-            property: property,
+            feedbackType:
+              "weekly_service",
 
-            client: client,
+            token:
+              token,
 
             rating:
               Number(rating.value),
@@ -1147,24 +1069,23 @@
           /*
             TEMPORARY
 
-            This lets us confirm the page works.
+            Right now this only logs the submission.
 
-            Next we will replace this with a call to:
+            Next we will connect this to:
 
             /api/submit-feedback
 
-            which will save the response
-            to the RADNIK database.
+            and save everything into the database.
           */
 
           console.log(
-            "RADNIK Feedback:",
+            "RADNIK Weekly Feedback:",
             data
           );
 
 
           /*
-            Show confirmation
+            SHOW SUCCESS SCREEN
           */
 
           document
