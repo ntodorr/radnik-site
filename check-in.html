@@ -28,13 +28,14 @@
 
     .top-bar {
       width: 100%;
-      background: #0d0d0d;
-      border-bottom: 4px solid #c9252d;
-      padding: 12px 20px;
+      background: #ffffff;
+      padding: 8px 20px 5px;
 
       display: flex;
       align-items: center;
       justify-content: center;
+
+      border-bottom: 3px solid #c9252d;
     }
 
     .logo-link {
@@ -46,8 +47,8 @@
 
     .logo-link img {
       display: block;
-      width: 275px;
-      max-width: 100%;
+      width: 340px;
+      max-width: 90%;
       height: auto;
     }
 
@@ -58,7 +59,7 @@
     .page-wrap {
       width: 100%;
       max-width: 720px;
-      margin: 40px auto;
+      margin: 24px auto;
       padding: 0 18px 60px;
     }
 
@@ -189,14 +190,13 @@
     }
 
     /* =========================
-       TEXTAREAS
+       TEXT AREAS
     ========================= */
 
     textarea {
       display: block;
       width: 100%;
       min-height: 105px;
-
       resize: vertical;
 
       background: #ffffff;
@@ -348,7 +348,7 @@
     }
 
     /* =========================
-       SUBMIT BUTTON
+       BUTTON
     ========================= */
 
     button {
@@ -445,15 +445,16 @@
     @media (max-width: 600px) {
 
       .top-bar {
-        padding: 11px 15px;
+        padding: 6px 12px 4px;
       }
 
       .logo-link img {
-        width: 220px;
+        width: 285px;
+        max-width: 92%;
       }
 
       .page-wrap {
-        margin: 22px auto;
+        margin: 16px auto;
         padding: 0 12px 40px;
       }
 
@@ -534,12 +535,10 @@
     <div class="card">
 
 
-      <!-- FORM CONTENT -->
-
       <div id="formContent">
 
 
-        <!-- HEADER -->
+        <!-- FORM HEADER -->
 
         <div class="form-header">
 
@@ -564,7 +563,7 @@
 
 
           <!-- =========================
-               OVERALL RATING
+               RATING
           ========================== -->
 
           <div class="question rating-question">
@@ -669,7 +668,7 @@
 
 
           <!-- =========================
-               ADDITIONAL OPPORTUNITIES
+               OTHER WORK
           ========================== -->
 
           <div class="question">
@@ -916,14 +915,14 @@
     /*
       UNIQUE CUSTOMER TOKEN
 
-      The visible form remains identical for every customer.
+      Every customer sees the same form.
 
-      Later, each contact will receive a unique link such as:
+      Their unique email link will later look like:
 
       radnik.us/check-in.html?t=abc123xyz
 
-      That token will identify the customer, property
-      and contact behind the scenes.
+      The token will identify the client,
+      property and recipient behind the scenes.
     */
 
     const urlParams =
@@ -972,7 +971,7 @@
 
 
           /*
-            STAR RATING REQUIRED
+            REQUIRE STAR RATING
           */
 
           const rating =
@@ -1002,7 +1001,7 @@
 
 
           /*
-            SERVICES SELECTED
+            SELECTED SERVICES
           */
 
           const selectedServices =
@@ -1026,7 +1025,7 @@
 
 
           /*
-            BUILD RESPONSE OBJECT
+            BUILD RESPONSE DATA
           */
 
           const data = {
@@ -1069,13 +1068,8 @@
           /*
             TEMPORARY
 
-            Right now this only logs the submission.
-
-            Next we will connect this to:
-
-            /api/submit-feedback
-
-            and save everything into the database.
+            Next we will replace this with
+            a connection to the database.
           */
 
           console.log(
@@ -1085,7 +1079,7 @@
 
 
           /*
-            SHOW SUCCESS SCREEN
+            SHOW SUCCESS MESSAGE
           */
 
           document
