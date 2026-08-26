@@ -59,10 +59,11 @@
       max-width: none;
       height: auto;
 
-      /* Enlarges actual logo while hiding
-         transparent padding inside the PNG */
       transform: scale(1.7);
       transform-origin: center center;
+
+      position: relative;
+      top: 16px;
     }
 
     /* =========================
@@ -469,6 +470,7 @@
       .logo-link img {
         width: 285px;
         transform: scale(1.65);
+        top: 13px;
       }
 
       .page-wrap {
@@ -524,10 +526,6 @@
 
 <body>
 
-  <!-- =========================
-       RADNIK HEADER
-  ========================== -->
-
   <header class="top-bar">
 
     <a
@@ -544,17 +542,11 @@
   </header>
 
 
-  <!-- =========================
-       MAIN FORM
-  ========================== -->
-
   <main class="page-wrap">
 
     <div class="card">
 
       <div id="formContent">
-
-        <!-- FORM HEADER -->
 
         <div class="form-header">
 
@@ -577,10 +569,6 @@
 
         <form id="feedbackForm">
 
-          <!-- =========================
-               RATING
-          ========================== -->
-
           <div class="question rating-question">
 
             <div class="question-title">
@@ -592,44 +580,19 @@
               aria-label="Service rating"
             >
 
-              <input
-                type="radio"
-                id="star5"
-                name="rating"
-                value="5"
-              >
+              <input type="radio" id="star5" name="rating" value="5">
               <label for="star5" title="5 stars">★</label>
 
-              <input
-                type="radio"
-                id="star4"
-                name="rating"
-                value="4"
-              >
+              <input type="radio" id="star4" name="rating" value="4">
               <label for="star4" title="4 stars">★</label>
 
-              <input
-                type="radio"
-                id="star3"
-                name="rating"
-                value="3"
-              >
+              <input type="radio" id="star3" name="rating" value="3">
               <label for="star3" title="3 stars">★</label>
 
-              <input
-                type="radio"
-                id="star2"
-                name="rating"
-                value="2"
-              >
+              <input type="radio" id="star2" name="rating" value="2">
               <label for="star2" title="2 stars">★</label>
 
-              <input
-                type="radio"
-                id="star1"
-                name="rating"
-                value="1"
-              >
+              <input type="radio" id="star1" name="rating" value="1">
               <label for="star1" title="1 star">★</label>
 
             </div>
@@ -643,10 +606,6 @@
 
           </div>
 
-
-          <!-- =========================
-               WHAT DID WE DO WELL
-          ========================== -->
 
           <div class="question">
 
@@ -663,10 +622,6 @@
           </div>
 
 
-          <!-- =========================
-               IMPROVEMENT
-          ========================== -->
-
           <div class="question">
 
             <div class="question-title">
@@ -682,10 +637,6 @@
           </div>
 
 
-          <!-- =========================
-               OTHER WORK
-          ========================== -->
-
           <div class="question">
 
             <div class="question-title">
@@ -700,74 +651,42 @@
             <div class="options">
 
               <label class="option">
-                <input
-                  type="checkbox"
-                  name="services"
-                  value="Maintenance / Repairs"
-                >
+                <input type="checkbox" name="services" value="Maintenance / Repairs">
                 <span>Maintenance / Repairs</span>
               </label>
 
               <label class="option">
-                <input
-                  type="checkbox"
-                  name="services"
-                  value="Painting / Drywall / Finishes"
-                >
+                <input type="checkbox" name="services" value="Painting / Drywall / Finishes">
                 <span>Painting / Drywall / Finishes</span>
               </label>
 
               <label class="option">
-                <input
-                  type="checkbox"
-                  name="services"
-                  value="Doors / Hardware"
-                >
+                <input type="checkbox" name="services" value="Doors / Hardware">
                 <span>Doors / Hardware</span>
               </label>
 
               <label class="option">
-                <input
-                  type="checkbox"
-                  name="services"
-                  value="Exterior / Pressure Washing"
-                >
+                <input type="checkbox" name="services" value="Exterior / Pressure Washing">
                 <span>Exterior / Pressure Washing</span>
               </label>
 
               <label class="option">
-                <input
-                  type="checkbox"
-                  name="services"
-                  value="Turnover / Cleaning"
-                >
+                <input type="checkbox" name="services" value="Turnover / Cleaning">
                 <span>Turnover / Cleaning</span>
               </label>
 
               <label class="option">
-                <input
-                  type="checkbox"
-                  name="services"
-                  value="Small Improvement Project"
-                >
+                <input type="checkbox" name="services" value="Small Improvement Project">
                 <span>Small Improvement Project</span>
               </label>
 
               <label class="option">
-                <input
-                  type="checkbox"
-                  name="services"
-                  value="CapEx / Larger Project"
-                >
+                <input type="checkbox" name="services" value="CapEx / Larger Project">
                 <span>CapEx / Larger Project</span>
               </label>
 
               <label class="option">
-                <input
-                  type="checkbox"
-                  name="services"
-                  value="Other"
-                >
+                <input type="checkbox" name="services" value="Other">
                 <span>Other</span>
               </label>
 
@@ -775,10 +694,6 @@
 
           </div>
 
-
-          <!-- =========================
-               FOLLOW UP
-          ========================== -->
 
           <div class="question">
 
@@ -798,9 +713,7 @@
                   onclick="toggleFollowUp(false)"
                 >
 
-                <span>
-                  No, we're all set
-                </span>
+                <span>No, we're all set</span>
 
               </label>
 
@@ -814,9 +727,7 @@
                   onclick="toggleFollowUp(true)"
                 >
 
-                <span>
-                  Yes, please contact me
-                </span>
+                <span>Yes, please contact me</span>
 
               </label>
 
@@ -834,10 +745,6 @@
 
           </div>
 
-
-          <!-- =========================
-               OPT OUT
-          ========================== -->
 
           <div class="opt-out">
 
@@ -858,10 +765,6 @@
           </div>
 
 
-          <!-- =========================
-               SUBMIT
-          ========================== -->
-
           <button
             type="submit"
             id="submitButton"
@@ -878,10 +781,6 @@
 
       </div>
 
-
-      <!-- =========================
-           SUCCESS MESSAGE
-      ========================== -->
 
       <div
         class="success"
@@ -908,22 +807,7 @@
   </main>
 
 
-  <!-- =========================
-       JAVASCRIPT
-  ========================== -->
-
   <script>
-
-    /*
-      UNIQUE CUSTOMER TOKEN
-
-      Each customer will eventually receive a unique link:
-
-      radnik.us/check-in.html?t=abc123xyz
-
-      The token identifies the client, property
-      and recipient behind the scenes.
-    */
 
     const urlParams =
       new URLSearchParams(window.location.search);
@@ -931,10 +815,6 @@
     const token =
       urlParams.get("t") || "";
 
-
-    /*
-      SHOW / HIDE FOLLOW-UP DETAILS
-    */
 
     function toggleFollowUp(show) {
 
@@ -957,10 +837,6 @@
     }
 
 
-    /*
-      FORM SUBMISSION
-    */
-
     document
       .getElementById("feedbackForm")
       .addEventListener(
@@ -969,10 +845,6 @@
 
           event.preventDefault();
 
-
-          /*
-            REQUIRE STAR RATING
-          */
 
           const rating =
             document.querySelector(
@@ -1000,10 +872,6 @@
             event.target;
 
 
-          /*
-            SELECTED SERVICES
-          */
-
           const selectedServices =
             Array.from(
               document.querySelectorAll(
@@ -1014,19 +882,11 @@
             );
 
 
-          /*
-            FOLLOW-UP SELECTION
-          */
-
           const followUp =
             document.querySelector(
               'input[name="followUp"]:checked'
             );
 
-
-          /*
-            BUILD RESPONSE DATA
-          */
 
           const data = {
 
@@ -1065,22 +925,11 @@
           };
 
 
-          /*
-            TEMPORARY
-
-            Next step will be replacing this
-            with the database/API connection.
-          */
-
           console.log(
             "RADNIK Weekly Feedback:",
             data
           );
 
-
-          /*
-            SHOW SUCCESS MESSAGE
-          */
 
           document
             .getElementById("formContent")
