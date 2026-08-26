@@ -28,28 +28,41 @@
 
     .top-bar {
       width: 100%;
-      background: #ffffff;
-      padding: 8px 20px 5px;
+      height: 92px;
+
+      background: #0d0d0d;
+      border-bottom: 4px solid #c9252d;
 
       display: flex;
       align-items: center;
       justify-content: center;
 
-      border-bottom: 3px solid #c9252d;
+      overflow: hidden;
     }
 
     .logo-link {
+      width: 360px;
+      height: 92px;
+
       display: flex;
       align-items: center;
       justify-content: center;
+
       text-decoration: none;
+      overflow: hidden;
     }
 
     .logo-link img {
       display: block;
+
       width: 340px;
-      max-width: 90%;
+      max-width: none;
       height: auto;
+
+      /* Enlarges actual logo while hiding
+         transparent padding inside the PNG */
+      transform: scale(1.7);
+      transform-origin: center center;
     }
 
     /* =========================
@@ -271,7 +284,7 @@
     }
 
     /* =========================
-       FOLLOW-UP
+       FOLLOW UP
     ========================= */
 
     .follow-up-options {
@@ -445,12 +458,17 @@
     @media (max-width: 600px) {
 
       .top-bar {
-        padding: 6px 12px 4px;
+        height: 76px;
+      }
+
+      .logo-link {
+        width: 300px;
+        height: 76px;
       }
 
       .logo-link img {
         width: 285px;
-        max-width: 92%;
+        transform: scale(1.65);
       }
 
       .page-wrap {
@@ -534,9 +552,7 @@
 
     <div class="card">
 
-
       <div id="formContent">
-
 
         <!-- FORM HEADER -->
 
@@ -560,7 +576,6 @@
 
 
         <form id="feedbackForm">
-
 
           <!-- =========================
                RATING
@@ -684,7 +699,6 @@
 
             <div class="options">
 
-
               <label class="option">
                 <input
                   type="checkbox"
@@ -693,7 +707,6 @@
                 >
                 <span>Maintenance / Repairs</span>
               </label>
-
 
               <label class="option">
                 <input
@@ -704,7 +717,6 @@
                 <span>Painting / Drywall / Finishes</span>
               </label>
 
-
               <label class="option">
                 <input
                   type="checkbox"
@@ -713,7 +725,6 @@
                 >
                 <span>Doors / Hardware</span>
               </label>
-
 
               <label class="option">
                 <input
@@ -724,7 +735,6 @@
                 <span>Exterior / Pressure Washing</span>
               </label>
 
-
               <label class="option">
                 <input
                   type="checkbox"
@@ -733,7 +743,6 @@
                 >
                 <span>Turnover / Cleaning</span>
               </label>
-
 
               <label class="option">
                 <input
@@ -744,7 +753,6 @@
                 <span>Small Improvement Project</span>
               </label>
 
-
               <label class="option">
                 <input
                   type="checkbox"
@@ -754,7 +762,6 @@
                 <span>CapEx / Larger Project</span>
               </label>
 
-
               <label class="option">
                 <input
                   type="checkbox"
@@ -763,7 +770,6 @@
                 >
                 <span>Other</span>
               </label>
-
 
             </div>
 
@@ -782,7 +788,6 @@
             </div>
 
             <div class="follow-up-options">
-
 
               <label class="follow-choice">
 
@@ -814,7 +819,6 @@
                 </span>
 
               </label>
-
 
             </div>
 
@@ -870,7 +874,6 @@
             Feedback is reviewed directly by RADNIK management.
           </div>
 
-
         </form>
 
       </div>
@@ -900,7 +903,6 @@
 
       </div>
 
-
     </div>
 
   </main>
@@ -915,14 +917,12 @@
     /*
       UNIQUE CUSTOMER TOKEN
 
-      Every customer sees the same form.
-
-      Their unique email link will later look like:
+      Each customer will eventually receive a unique link:
 
       radnik.us/check-in.html?t=abc123xyz
 
-      The token will identify the client,
-      property and recipient behind the scenes.
+      The token identifies the client, property
+      and recipient behind the scenes.
     */
 
     const urlParams =
@@ -1068,8 +1068,8 @@
           /*
             TEMPORARY
 
-            Next we will replace this with
-            a connection to the database.
+            Next step will be replacing this
+            with the database/API connection.
           */
 
           console.log(
